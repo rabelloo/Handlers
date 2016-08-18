@@ -18,28 +18,32 @@ DateTime.UtcNow.ToLocalDateString("Central Standard Time");
 
 You may also call them explicitly like `DateTimeHandler.ToUtcDate(DateTime, string)`.
 
-When converting to UTC, the `string dateTimeZoneInfoId` will be used to define `DateTime this dateTime`'s Time Zone.
+When converting to UTC, the `string dateTimeZoneInfoId` will be used to define `DateTime this dateTime`'s Time Zone.<br>
 When converting to local, the `string dateTimeZoneInfoId` will be used to define the `return DateTime`'s Time Zone.
 
+If timeZoneInfoId is null or empty, DateTime will be converted normally with `.ToUniversalTime()`.
+
+Invalid timeZoneInfoIds like `"en-US"` will throw an Exception.
+
 ## Methods
-DateTimeHandler:
+**DateTimeHandler:**
 
 ```C#
-string ToSqlDate(this DateTime dateTime, string timeZoneInfoId)
-string ToSqlDate(this DateTime? dateTime, string timeZoneInfoId)
-string ToSqlDate(this string dateTime, string timeZoneInfoId)
+string ToSqlDate(this DateTime dateTime, string timeZoneInfoId = null)
+string ToSqlDate(this DateTime? dateTime, string timeZoneInfoId = null)
+string ToSqlDate(this string dateTime, string timeZoneInfoId = null)
 
-string ToIsoString(this DateTime dateTime, string timeZoneInfoId)
-string ToIsoString(this DateTime? dateTime, string timeZoneInfoId)
+string ToIsoString(this DateTime dateTime, string timeZoneInfoId = null)
+string ToIsoString(this DateTime? dateTime, string timeZoneInfoId = null)
 
-string ToLocalDateString(this string dateTime, string timeZoneInfoId)
-string ToLocalDateString(this DateTime dateTime, string timeZoneInfoId)
-string ToLocalDateString(this DateTime? dateTime, string timeZoneInfoId)
+string ToLocalDateString(this string dateTime, string timeZoneInfoId = null)
+string ToLocalDateString(this DateTime dateTime, string timeZoneInfoId = null)
+string ToLocalDateString(this DateTime? dateTime, string timeZoneInfoId = null)
 
-DateTime ToUtcDate(this DateTime dateTime, string timeZoneInfoId)
+DateTime ToUtcDate(this DateTime dateTime, string timeZoneInfoId = null)
 ```
 
-HtmlStringHandler:
+**HtmlStringHandler:**
 
 ```C#
 IHtmlString ToLiteral(this string text)
