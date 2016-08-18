@@ -13,7 +13,7 @@ namespace MyApp.Models
         /// </summary>
         /// <param name="dateTime">DateTime</param>
         /// <param name="timeZoneInfoId">TimeZoneInfo ID of dateTime</param>
-        public static string ToSqlDate(this DateTime dateTime, string timeZoneInfoId)
+        public static string ToSqlDate(this DateTime dateTime, string timeZoneInfoId = null)
         {          
             // Convert to UTC if needed and return SQL string
             return dateTime
@@ -26,7 +26,7 @@ namespace MyApp.Models
         /// </summary>
         /// <param name="dateTime">DateTime</param>
         /// <param name="timeZoneInfoId">TimeZoneInfo ID of dateTime</param>
-        public static string ToSqlDate(this DateTime? dateTime, string timeZoneInfoId)
+        public static string ToSqlDate(this DateTime? dateTime, string timeZoneInfoId = null)
         {
             // If no value return empty
             if (!dateTime.HasValue)
@@ -43,7 +43,7 @@ namespace MyApp.Models
         /// </summary>
         /// <param name="dateTime">DateTime as string</param>
         /// <param name="timeZoneInfoId">TimeZoneInfo ID of dateTime</param>
-        public static string ToSqlDate(this string dateTime, string timeZoneInfoId)
+        public static string ToSqlDate(this string dateTime, string timeZoneInfoId = null)
         {
             // Parse, convert to UTC and return string
             return DateTime.Parse(dateTime)
@@ -56,7 +56,7 @@ namespace MyApp.Models
         /// </summary>
         /// <param name="dateTime">DateTime</param>
         /// <param name="timeZoneInfoId">TimeZoneInfo ID of dateTime</param>
-        public static string ToIsoString(this DateTime dateTime, string timeZoneInfoId)
+        public static string ToIsoString(this DateTime dateTime, string timeZoneInfoId = null)
         {
             // Convert to UTC if needed and return ISO string
             return dateTime
@@ -69,7 +69,7 @@ namespace MyApp.Models
         /// </summary>
         /// <param name="dateTime">DateTime</param>
         /// <param name="timeZoneInfoId">TimeZoneInfo ID of dateTime</param>
-        public static string ToIsoString(this DateTime? dateTime, string timeZoneInfoId)
+        public static string ToIsoString(this DateTime? dateTime, string timeZoneInfoId = null)
         {
             // If no value return empty
             if (!dateTime.HasValue)
@@ -87,7 +87,7 @@ namespace MyApp.Models
         /// </summary>
         /// <param name="dateTime">DateTime as string</param>
         /// <param name="timeZoneInfoId">TimeZoneInfo ID of dateTime</param>
-        public static string ToLocalDateString(this string dateTime, string timeZoneInfoId)
+        public static string ToLocalDateString(this string dateTime, string timeZoneInfoId = null)
         {
             try
             {
@@ -107,7 +107,7 @@ namespace MyApp.Models
         /// </summary>
         /// <param name="dateTime">DateTime</param>
         /// <param name="timeZoneInfoId">TimeZoneInfo ID of dateTime</param>
-        public static string ToLocalDateString(this DateTime dateTime, string timeZoneInfoId)
+        public static string ToLocalDateString(this DateTime dateTime, string timeZoneInfoId = null)
         {
             // Convert to Local date if needed and return local date string for display
             return dateTime
@@ -120,7 +120,7 @@ namespace MyApp.Models
         /// </summary>
         /// <param name="dateTime">DateTime</param>
         /// <param name="timeZoneInfoId">TimeZoneInfo ID of dateTime</param>
-        public static string ToLocalDateString(this DateTime? dateTime, string timeZoneInfoId)
+        public static string ToLocalDateString(this DateTime? dateTime, string timeZoneInfoId = null)
         {
             // If no value return empty
             if (!dateTime.HasValue)
@@ -135,7 +135,7 @@ namespace MyApp.Models
         /// </summary>
         /// <param name="dateTime">DateTime</param>
         /// <param name="timeZoneInfoId">TimeZoneInfo ID of dateTime</param>
-        private static DateTime ToLocalDate(this DateTime dateTime, string timeZoneInfoId)
+        private static DateTime ToLocalDate(this DateTime dateTime, string timeZoneInfoId = null)
         {
             // If already Local return
             if (dateTime.Kind == DateTimeKind.Local)
@@ -158,7 +158,7 @@ namespace MyApp.Models
         /// </summary>
         /// <param name="dateTime">DateTime to UTC</param>
         /// <param name="timeZoneInfoId">TimeZoneInfo ID of dateTime</param>
-        public static DateTime ToUtcDate(this DateTime dateTime, string timeZoneInfoId)
+        public static DateTime ToUtcDate(this DateTime dateTime, string timeZoneInfoId = null)
         {
             // If already UTC return
             if (dateTime.Kind == DateTimeKind.Utc)
