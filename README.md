@@ -18,12 +18,12 @@ DateTime.UtcNow.ToLocalDateString("Central Standard Time");
 
 You may also call them explicitly like `DateTimeHandler.ToUtcDate(DateTime, string)`.
 
-When converting to UTC, the `string dateTimeZoneInfoId` will be used to define `DateTime this dateTime`'s Time Zone.<br>
+When converting to UTC, the `string dateTimeZoneInfoId` will be used to define `DateTime dateTime`'s Time Zone.<br>
 When converting to local, the `string dateTimeZoneInfoId` will be used to define the `return DateTime`'s Time Zone.
 
-If timeZoneInfoId is null or empty, DateTime will be converted normally with `.ToUniversalTime()`.
+If `timeZoneInfoId` is null or empty, `DateTime dateTime` will be converted normally with `.ToUniversalTime()`.
 
-Invalid timeZoneInfoIds like `"en-US"` will throw an Exception.
+Invalid `timeZoneInfoId`s like `"en-US"` will throw an Exception.
 
 ## Methods
 **DateTimeHandler:**
